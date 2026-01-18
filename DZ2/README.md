@@ -12,6 +12,5 @@
 ## Используемые технологии
 - ASP.NET Core
 - .NET 8
-- Autofac
 - Dependency Injection
 
