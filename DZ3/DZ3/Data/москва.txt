@@ -1,0 +1,3 @@
+Weather= Снег, -14°C
+Area=2562
+Population=13274285

@@ -1,0 +1,3 @@
+Weather=Солнечно, +5°C
+Area=891.8
+Population=3326099
