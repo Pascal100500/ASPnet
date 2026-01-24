@@ -1,0 +1,27 @@
+﻿@page 
+@model DZ5.Pages.FactorialModel
+@{
+}
+<h2>@Model.Message</h2>
+
+<form method="post">
+    <p>
+        <label>Введите число:</label><br />
+        <input type="number" name="N" />
+    </p>
+    <button type="submit">Посчитать</button>
+</form>
+
+@if (Model.N > 0)
+{
+    <h3>Результат:</h3>
+    <p>@Model.N! = @Model.Result</p>
+}
+
+
+<h4>Программа работает двумя способами:</h4>
+<p>Введите в адресную строку адрес:</p>
+<p>https://localhost:7159/Factorial?N=5</p>
+<p>Или введите данные через форму</p>
+
+<a href="/">На главную</a>
