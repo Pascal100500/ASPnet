@@ -1,0 +1,52 @@
+﻿@page "{handler?}"
+@model DZ6.Pages.IndexModel
+
+@{
+    ViewData["Title"] = "Города и население (Razor_GetBy)";
+}
+
+<form method="get">
+    <label>Введите город для поиска:</label><br />
+    <input type="text" name="name" />
+    <input type="hidden" name="handler" value="ByCity" />
+    <button type="submit">Поиск по названию</button>
+</form>
+
+<form method="get" style="margin-top: 10px;">
+    <label>Введите население:</label><br />
+    <input type="number" name="population" />
+    <input type="hidden" name="handler" value="ByPopulation" />
+    <button type="submit">Поиск по населению</button>
+</form>
+
+<h2>Список городов</h2>
+
+<table border="1" cellpadding="5">
+    <tr>
+        <th>Город</th>
+        <th>Население</th>
+    </tr>
+    @foreach (var city in Model.DisplayedCities)
+    {
+        <tr>
+            <td>@city.Name</td>
+            <td>@city.Population</td>
+        </tr>
+    }
+</table>
+
+@if (!string.IsNullOrEmpty(Model.Message))
+{
+    <p><b>@Model.Message</b></p>
+}
+
+<p>
+    <i>
+        Для работы примера введите:<br />
+        https://localhost:7238/Index/ByCity?name=Москва<br />
+        https://localhost:7238/Index/ByPopulation?population=3000000
+
+    </i>
+</p>
+
+<a href="/">На главную</a>
