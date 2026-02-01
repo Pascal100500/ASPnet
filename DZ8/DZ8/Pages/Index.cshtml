@@ -1,0 +1,24 @@
+﻿@page
+@model IndexModel
+
+@inject ICityTimeService timeService
+
+@{
+    ViewBag.TitleText = "Время в городах мира";
+}
+
+<h2>@ViewBag.TitleText</h2>
+
+<a asp-page="Weather">Города и погода</a><br /><br />
+
+<ul>
+    @if (ViewData["Cities"] is List<string> cities)
+    {
+        foreach (var city in cities)
+        {
+            <li>
+                <b>@city</b> — @timeService.GetTime(city)
+            </li>
+        }
+    }
+</ul>

@@ -1,0 +1,53 @@
+﻿@page
+@model WeatherModel
+@inject IWeatherService weatherService
+
+<!--
+    (ОПИСАНИЕ СДЕЛАНО С ПОМОЩЬЮ ЭЛЕКТРОННОГО ПОМОЩНИКА!)
+  В проекте используется объект **ViewBag** для передачи заголовка страницы из модели представления (PageModel) в Razor-страницу.
+
+Пример из кода:
+
+```ViewBag.TitleText = "Время в городах мира";
+
+На странице Razor это значение выводится так:
+<h2>@ViewBag.TitleText</h2>
+ViewBag — это просто удобная оболочка над ViewData.
+Технически:
+
+```ViewBag.Title = "Погода в городах";
+
+и
+
+```ViewData["Title"] = "Погода в городах";
+
+это одно и то же внутри.
+
+### ViewBag — это:
+
+ - динамическое свойство
+
+ - работает ТОЛЬКО в Razor (.cshtml)
+
+ - не существует как поле в PageModel
+-->
+
+<h2>@ViewBag.Title</h2>
+
+<ul>
+    @if (ViewData["Cities"] is List<string> cities)
+    {
+        <ul>
+            @foreach (var city in cities)
+            {
+                <li><b>@city</b> — @weatherService.GetWeather(city)</li>
+            }
+        </ul>
+    }
+    else
+    {
+        <p>Список городов не найден</p>
+    }
+</ul>
+
+<a asp-page="Index">Назад</a>
