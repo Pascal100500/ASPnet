@@ -26,9 +26,9 @@
 - В подвале отображается:
   - текущий год (через `DateTime.Now.Year`)
   - версия сайта
-```md
+
 Пример:
-```html
+```html```
 <p>© @DateTime.Now.Year Game Portal</p>
 <p>Версия сайта: 1.0</p>
 
