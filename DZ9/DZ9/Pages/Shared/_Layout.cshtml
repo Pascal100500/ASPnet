@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"] - GamePortal</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+
+    <header>
+        <h1>🎮 Game Portal</h1>
+        <p>Онлайн-игры и мини-игры</p>
+    </header>
+
+    <nav>
+        <a asp-page="/Index">Главная</a>
+        <a asp-page="/About">О разработчике</a>
+    </nav>
+
+    <main>
+        @RenderBody()
+    </main>
+
+    <footer>
+        <hr />
+        <p>© @DateTime.Now.Year Game Portal Maxim</p>
+        <p>Версия сайта: 1.0</p>
+    </footer>
+
+</body>
+</html>
