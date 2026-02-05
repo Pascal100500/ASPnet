@@ -1,0 +1,17 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "My TagHelpers";
+}
+
+<h2>Custom Tag Helpers</h2>
+
+<h3>Вывод изображения</h3>
+<image>sun</image>
+
+<h3>оОтображение времени + (GMT offset)</h3>
+
+<p>Москва: <time offset="3"></time></p>
+<p>Лондон: <time offset="0"></time></p>
+<p>Токио: <time offset="9"></time></p>
+
