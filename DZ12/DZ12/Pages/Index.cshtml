@@ -4,41 +4,12 @@
     ViewData["Title"] = "Home page";
 }
 
-<style>
-    table {
-        width: 80%;
-        border-collapse: collapse;
-        margin: auto;
-    }
-    th, td {
-        border: solid 1px #ddd;
-        padding: 5px;
-        text-align: center;
-    }
-    th {
-        background: lightgray;
-        font-weight: bold;
-        font-style: italic;
-    }
-    tbody tr:nth-child(odd) {
-        background: lightgreen;
-    }
-</style>
-<div class="text-center">
-    <h3 class="display-4">Список Автомобилей</h3>
-</div>
-<table>
-    <tr>
-        <th>Модель</th>
-        <th>Тип</th>
-        <th>Год выпуска</th>
-    </tr>
-    @foreach (var auto in Model.Autos)
-    {
-        <tr><td>@auto.Model</td><td>@auto.Type</td><td>@auto.Year</td></tr>
-    }
-</table>
-<geolocation autolocate onlocation="
-    const {latitude: lat, longitude: lon} = event.target.position.coords;
-    document.getElementById('out').innerText = `Широта ${lat.toFixed(2)} Долгота ${lon.toFixed(2)}`;
-"></geolocation>
+<h2>Добро пожаловать в Auto Portal </h2>
+
+<p>
+    Управление автомобилями через Entity Framework + PostgreSQL
+</p>
+
+<a asp-page="/Autos/Index" class="btn-submit">
+    Перейти к списку автомобилей
+</a>
